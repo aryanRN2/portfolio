@@ -1397,7 +1397,7 @@ export default function MasterNeuralGraph() {
               e.currentTarget.style.background = "rgba(255, 255, 255, 0.03)";
             }}
           >
-            ← RETURN TO ARCHITECTURE
+            ← Back
           </Link>
           <h1
             style={{
