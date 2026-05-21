@@ -1,0 +1,74 @@
+Created At: 2026-05-21T11:58:53Z
+Completed At: 2026-05-21T11:58:53Z
+File Path: `file:///Users/aryanmaurya/profitolio%20website/app/page.tsx`
+Total Lines: 802
+Total Bytes: 52740
+Showing lines 1 to 800
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: "use client";
+2: 
+3: import { useState } from "react";
+4: import Link from "next/link";
+5: import ThreeBackground from "./components/ThreeBackground";
+6: import NeuralNetworkChord from "./components/NeuralNetworkChord";
+7: 
+8: type TabType = "education" | "projects" | "certificates" | "socials";
+9: 
+10: export default function Home() {
+11:   const [activeTab, setActiveTab] = useState<TabType>("projects");
+12: 
+13:   return (
+14:     <>
+15:       {/* High-performance lightweight 3D Background */}
+16:       <ThreeBackground />
+17: 
+18:       {/* Main Container */}
+19:       <div className="container" style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+20:         
+21:         {/* Navigation Removed */}
+22: 
+23:         {/* Hero & About Section */}
+24:         <main style={{ flex: 1, padding: "3rem 0" }}>
+25:           
+26:           <section id="about" className="animate-fade-in-up" style={{ marginBottom: "4rem" }}>
+27:             <div className="glass-panel" style={{ padding: "40px", position: "relative", overflow: "hidden" }}>
+28:               {/* Decorative subtle glows */}
+29:               <div style={{
+30:                 position: "absolute",
+31:                 top: "-10%",
+32:                 right: "-10%",
+33:                 width: "250px",
+34:                 height: "250px",
+35:                 borderRadius: "50%",
+36:                 background: "radial-gradient(circle, var(--primary-glow) 0%, transparent 70%)",
+37:                 pointerEvents: "none"
+38:               }} />
+39:               
+40:               <div style={{ display: "flex
+<truncated 45282 bytes>
+1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0z" fill="#0A66C2" />
+658:                       </svg>
+659:                       <div>
+660:                         <div style={{ fontWeight: 600 }}>LinkedIn</div>
+661:                         <div style={{ fontSize: "0.75rem", opacity: 0.8, fontFamily: "var(--font-mono)" }}>@aryan-maurya-vns</div>
+662:                       </div>
+663:                     </a>
+664: 
+665:                     {/* Kaggle (Brilliant Cyan) */}
+666:                     <a href="https://www.kaggle.com/aryanbhu" target="_blank" rel="noopener noreferrer" className="glass-panel social-btn social-kaggle">
+667:                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+668:                         <path d="M19 2.25L11.5 12l7.5 9.75h-3.75L8.75 13.5v8.25H5.5V2.25h3.25v9L15.25 2.25H19z" fill="#20BEFF" />
+669:                       </svg>
+670:                       <div>
+671:                         <div style={{ fontWeight: 600 }}>Kaggle</div>
+672:                         <div style={{ fontSize: "0.75rem", opacity: 0.8, fontFamily: "var(--font-mono)" }}>@aryanbhu</div>
+673:                       </div>
+674:                     </a>
+675: 
+676:                     {/* LeetCode (Vibrant Orange) */}
+677:                     <a href="https://leetcode.com/u/aryan_bhu/" target="_blank" rel="noopener noreferrer" className="glass-panel social-btn social-leetcode">
+678:                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+679:                         <path fillRule="evenodd" clipRule="evenodd" d="M13.483 0a1.374 1.374 0 0 0-.961.411L7.11 5.823a1.372 1.372 0 0 0-.025 1.917l.025.026a1.372 1.372 0 0 0 1.917.025l5.228-5.011a1.372 1.372 0 0 0-.025-1.917L1
+<truncated 8038 bytes>
+
+NOTE: The output was truncated because it was too long. Use a more targeted query or a smaller range to get the information you need.

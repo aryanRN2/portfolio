@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import ThreeBackground from "./components/ThreeBackground";
+import NeuralNetworkChord from "./components/NeuralNetworkChord";
 
 type TabType = "education" | "projects" | "certificates" | "socials";
 
@@ -16,16 +17,7 @@ export default function Home() {
       {/* Main Container */}
       <div className="container" style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
         
-        {/* Sticky Header */}
-        <header>
-          <div className="logo-text gradient-text">ARYAN MAURYA</div>
-          <nav style={{ display: "flex", gap: "24px" }}>
-            <a href="#about" className="nav-link">About</a>
-            <a href="#hub" onClick={() => setActiveTab("projects")} className="nav-link">Projects</a>
-            <a href="#hub" onClick={() => setActiveTab("education")} className="nav-link">Education</a>
-            <a href="#hub" onClick={() => setActiveTab("certificates")} className="nav-link">Certificates</a>
-          </nav>
-        </header>
+        {/* Navigation Removed */}
 
         {/* Hero & About Section */}
         <main style={{ flex: 1, padding: "3rem 0" }}>
@@ -44,63 +36,60 @@ export default function Home() {
                 pointerEvents: "none"
               }} />
               
-              <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "20px", alignItems: "center", textAlign: "center" }}>
                 
                 {/* Meta Tag Badge */}
-                <div style={{ display: "inline-flex", alignSelf: "flex-start" }}>
-                  <span style={{
-                    background: "rgba(79, 70, 229, 0.08)",
-                    border: "1px solid rgba(79, 70, 229, 0.15)",
+                <div style={{ display: "inline-flex", alignSelf: "center", marginBottom: "1rem" }}>
+                  <div style={{
+                    position: "relative",
+                    background: "linear-gradient(90deg, rgba(79, 70, 229, 0.1), rgba(8, 145, 178, 0.1))",
+                    border: "1px solid rgba(79, 70, 229, 0.3)",
                     color: "var(--primary)",
-                    padding: "6px 14px",
-                    borderRadius: "20px",
-                    fontSize: "0.8rem",
-                    fontWeight: 600,
-                    letterSpacing: "0.05em",
-                    fontFamily: "var(--font-mono)"
+                    padding: "8px 20px",
+                    borderRadius: "30px",
+                    fontSize: "0.85rem",
+                    fontWeight: 700,
+                    letterSpacing: "0.15em",
+                    fontFamily: "var(--font-mono)",
+                    boxShadow: "0 0 15px rgba(79, 70, 229, 0.15)"
                   }}>
-                    IIT MADRAS & BHU DUAL DEGREE CANDIDATE
-                  </span>
+                    <span style={{ display: "inline-block", width: "8px", height: "8px", borderRadius: "50%", background: "var(--primary)", marginRight: "8px", boxShadow: "0 0 8px var(--primary)" }}></span>
+                    AI ENGINEER
+                  </div>
                 </div>
 
                 {/* Name */}
-                <h1 className="gradient-text" style={{ fontSize: "clamp(2.2rem, 5vw, 3.8rem)", fontWeight: 800, lineHeight: 1.1, letterSpacing: "-0.02em" }}>
+                <h1 style={{ 
+                  fontSize: "clamp(2.5rem, 6vw, 4.5rem)", 
+                  fontWeight: 900, 
+                  lineHeight: 1.1, 
+                  letterSpacing: "-0.03em",
+                  background: "linear-gradient(135deg, #0f172a 0%, #4f46e5 50%, #0891b2 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  filter: "drop-shadow(0 4px 12px rgba(79, 70, 229, 0.15))"
+                }}>
                   Aryan Maurya
                 </h1>
 
                 {/* Tagline focused heavily on ML and AI */}
-                <h2 style={{ fontSize: "clamp(1.1rem, 2vw, 1.4rem)", fontWeight: 400, color: "var(--slate-400)", lineHeight: 1.5, maxWidth: "800px" }}>
-                  Training intelligent deep neural architectures and building highly scalable, data-driven AI systems. Specializing in Deep Learning, Predictive Modeling, and High-Performance Machine Learning Pipelines.
-                </h2>
-
-                <hr style={{ border: 0, height: "1px", background: "linear-gradient(90deg, rgba(0,0,0,0.06) 0%, transparent 100%)", margin: "10px 0" }} />
-
-                {/* Skills Section focused on ML/AI Core */}
-                <div>
-                  <h3 style={{ fontSize: "0.85rem", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--primary)", marginBottom: "12px", fontFamily: "var(--font-mono)" }}>
-                    Technical Core
-                  </h3>
-                  <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
-                    <span className="tech-tag">Machine Learning</span>
-                    <span className="tech-tag">Deep Learning</span>
-                    <span className="tech-tag">RAG</span>
-                    <span className="tech-tag">LangChain</span>
-                    <span className="tech-tag">LangGraph</span>
-                    <span className="tech-tag">Python</span>
-                    <span className="tech-tag">PyTorch</span>
-                    <span className="tech-tag">TensorFlow</span>
-                    <span className="tech-tag">Scikit-Learn</span>
-                    <span className="tech-tag">SQL</span>
-                    <span className="tech-tag">Next.js</span>
-                    <span className="tech-tag">FastAPI</span>
-                    <span className="tech-tag">TypeScript</span>
-                    <span className="tech-tag">Three.js</span>
-                  </div>
-                </div>
+                <p style={{ 
+                  fontSize: "clamp(1.15rem, 2.5vw, 1.5rem)", 
+                  fontWeight: 400, 
+                  color: "var(--slate-400)", 
+                  lineHeight: 1.6, 
+                  maxWidth: "850px",
+                  marginTop: "0.5rem"
+                }}>
+                  Training intelligent deep neural architectures and building highly scalable, data-driven AI systems. Specializing in <strong style={{ color: "var(--primary)" }}>Deep Learning</strong>, <strong style={{ color: "var(--primary)" }}>Predictive Modeling</strong>, and <strong style={{ color: "var(--primary)" }}>High-Performance Machine Learning Pipelines</strong>.
+                </p>
 
               </div>
             </div>
           </section>
+
+          {/* AI Engineer Neural Connection Map */}
+          <NeuralNetworkChord />
 
           {/* Interactive Hub Section */}
           <section id="hub" className="animate-fade-in-up delay-100" style={{ scrollMarginTop: "100px" }}>
@@ -417,17 +406,22 @@ export default function Home() {
                 <div style={{ animation: "fadeInUp 0.5s ease forwards" }}>
                   <div className="cards-grid">
                     
-                    {/* Real Cert 1: DeepLearning.AI Andrew Ng Machine Learning Specialization */}
+
+
+                    {/* Google Data Analytics Certificate */}
                     <div className="glass-panel certificate-card">
-                      <div className="certificate-icon" style={{ background: "rgba(79, 70, 229, 0.08)" }}>
-                        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                      <div className="certificate-icon" style={{ background: "rgba(66, 133, 244, 0.08)" }}>
+                        <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
                         </svg>
                       </div>
                       <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
-                        <h3 style={{ fontSize: "1.0rem", fontWeight: 600 }}>Machine Learning Specialization</h3>
-                        <p style={{ color: "var(--slate-400)", fontSize: "0.8rem" }}>Stanford University & DeepLearning.AI • 2025</p>
-                        <a href="https://www.coursera.org/account/accomplishments/specialization/J3ENEINYOK0Y" target="_blank" rel="noopener noreferrer" style={{ fontSize: "0.75rem", color: "var(--primary)", fontWeight: 500, textDecoration: "none", marginTop: "4px" }}>
+                        <h3 style={{ fontSize: "1.0rem", fontWeight: 600 }}>Google Data Analytics</h3>
+                        <p style={{ color: "var(--slate-400)", fontSize: "0.8rem" }}>Google • 2026</p>
+                        <a href="https://coursera.org/share/0de66d0bebc87533d3f1edad2227b7ab" target="_blank" rel="noopener noreferrer" style={{ fontSize: "0.75rem", color: "var(--primary)", fontWeight: 500, textDecoration: "none", marginTop: "4px" }}>
                           Verify Credential ↗
                         </a>
                       </div>
@@ -436,9 +430,7 @@ export default function Home() {
                     {/* Real Cert 2: DeepLearning.AI Andrew Ng Course 3 */}
                     <div className="glass-panel certificate-card">
                       <div className="certificate-icon" style={{ background: "rgba(79, 70, 229, 0.08)" }}>
-                        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-.778.099-1.533.284-2.253" />
-                        </svg>
+                        <img src="https://www.deeplearning.ai/favicon.ico" width="24" height="24" alt="DeepLearning.AI" style={{ borderRadius: "50%" }} />
                       </div>
                       <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                         <h3 style={{ fontSize: "1.0rem", fontWeight: 600 }}>Unsupervised Learning, Recommenders, Reinforcement Learning</h3>
@@ -449,12 +441,27 @@ export default function Home() {
                       </div>
                     </div>
 
+                    {/* DeepLearning.AI LangChain */}
+                    <div className="glass-panel certificate-card">
+                      <div className="certificate-icon" style={{ background: "rgba(79, 70, 229, 0.08)" }}>
+                        <img src="https://www.deeplearning.ai/favicon.ico" width="24" height="24" alt="DeepLearning.AI" style={{ borderRadius: "50%" }} />
+                      </div>
+                      <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+                        <h3 style={{ fontSize: "1.0rem", fontWeight: 600 }}>LangChain for LLM Application Development</h3>
+                        <p style={{ color: "var(--slate-400)", fontSize: "0.8rem" }}>DeepLearning.AI • 2026</p>
+                        <a href="https://learn.deeplearning.ai/accomplishments/2cb1b828-cf93-4268-a1de-5d45b5647997" target="_blank" rel="noopener noreferrer" style={{ fontSize: "0.75rem", color: "var(--primary)", fontWeight: 500, textDecoration: "none", marginTop: "4px" }}>
+                          Verify Credential ↗
+                        </a>
+                      </div>
+                    </div>
+
+
                     {/* Real Cert 3: HackerRank Software Engineer Intern */}
                     <div className="glass-panel certificate-card">
                       <div className="certificate-icon" style={{ background: "rgba(46, 200, 102, 0.08)" }}>
-                        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-                          <rect width="20" height="20" x="2" y="2" rx="4" stroke="currentColor" />
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M7 6h2.5v4h3V6H15v12h-2.5v-4.5h-3V18H7V6z" />
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <rect width="24" height="24" rx="5" fill="#2EC866" />
+                          <path d="M7 6h2.5v4h3V6H15v12h-2.5v-4.5h-3V18H7V6z" fill="#FFF" />
                         </svg>
                       </div>
                       <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
@@ -468,9 +475,10 @@ export default function Home() {
 
                     {/* Real Cert 4: SQL (Intermediate) */}
                     <div className="glass-panel certificate-card">
-                      <div className="certificate-icon">
-                        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      <div className="certificate-icon" style={{ background: "rgba(46, 200, 102, 0.08)" }}>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <rect width="24" height="24" rx="5" fill="#2EC866" />
+                          <path d="M7 6h2.5v4h3V6H15v12h-2.5v-4.5h-3V18H7V6z" fill="#FFF" />
                         </svg>
                       </div>
                       <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
@@ -484,9 +492,10 @@ export default function Home() {
 
                     {/* Real Cert 5: Python (Basic) */}
                     <div className="glass-panel certificate-card">
-                      <div className="certificate-icon">
-                        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" />
+                      <div className="certificate-icon" style={{ background: "rgba(46, 200, 102, 0.08)" }}>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <rect width="24" height="24" rx="5" fill="#2EC866" />
+                          <path d="M7 6h2.5v4h3V6H15v12h-2.5v-4.5h-3V18H7V6z" fill="#FFF" />
                         </svg>
                       </div>
                       <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
@@ -500,9 +509,10 @@ export default function Home() {
 
                     {/* Real Cert 6: SQL (Basic) */}
                     <div className="glass-panel certificate-card">
-                      <div className="certificate-icon">
-                        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                      <div className="certificate-icon" style={{ background: "rgba(46, 200, 102, 0.08)" }}>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <rect width="24" height="24" rx="5" fill="#2EC866" />
+                          <path d="M7 6h2.5v4h3V6H15v12h-2.5v-4.5h-3V18H7V6z" fill="#FFF" />
                         </svg>
                       </div>
                       <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
@@ -516,9 +526,10 @@ export default function Home() {
 
                     {/* Real Cert 7: CSS (Basic) */}
                     <div className="glass-panel certificate-card">
-                      <div className="certificate-icon">
-                        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      <div className="certificate-icon" style={{ background: "rgba(46, 200, 102, 0.08)" }}>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <rect width="24" height="24" rx="5" fill="#2EC866" />
+                          <path d="M7 6h2.5v4h3V6H15v12h-2.5v-4.5h-3V18H7V6z" fill="#FFF" />
                         </svg>
                       </div>
                       <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
@@ -596,13 +607,13 @@ export default function Home() {
                     </a>
 
                     {/* LeetCode (Vibrant Orange) */}
-                    <a href="https://leetcode.com/u/aryanRN2" target="_blank" rel="noopener noreferrer" className="glass-panel social-btn social-leetcode">
+                    <a href="https://leetcode.com/u/aryan_bhu/" target="_blank" rel="noopener noreferrer" className="glass-panel social-btn social-leetcode">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path fillRule="evenodd" clipRule="evenodd" d="M13.483 0a1.374 1.374 0 0 0-.961.411L7.11 5.823a1.372 1.372 0 0 0-.025 1.917l.025.026a1.372 1.372 0 0 0 1.917.025l5.228-5.011a1.372 1.372 0 0 0-.025-1.917L13.483 0zm5.111 8.248a1.375 1.375 0 0 0-1.917-.025L11.45 13.234a1.372 1.372 0 0 0-.025 1.917l.025.026a1.372 1.372 0 0 0 1.917.025l5.228-5.011a1.372 1.372 0 0 0-.025-1.917l-.001-.026zm-7.618 6.47l-1.637 1.637a1.372 1.372 0 0 1-1.94 0l-4.26-4.26a1.372 1.372 0 0 1 0-1.94l6.197-6.197c.536-.536 1.405-.536 1.94 0l1.638 1.637c.536.536.536 1.405 0 1.94l-5.228 5.228a1.372 1.372 0 0 0 0 1.94l3.29 3.29c.536.536.536 1.405 0 1.94l-.001.002z" fill="#FFA116" />
                       </svg>
                       <div>
                         <div style={{ fontWeight: 600 }}>LeetCode</div>
-                        <div style={{ fontSize: "0.75rem", opacity: 0.8, fontFamily: "var(--font-mono)" }}>@aryanRN2</div>
+                        <div style={{ fontSize: "0.75rem", opacity: 0.8, fontFamily: "var(--font-mono)" }}>@aryan_bhu</div>
                       </div>
                     </a>
 
