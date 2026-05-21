@@ -159,7 +159,8 @@ export default function NeuralNetworkChord() {
       centerY = height / 2;
       // Scaled radius to leave room for text (smaller radius ratio on mobile to fit long text)
       const isMobile = width < 600;
-      radius = Math.min(width, height) * (isMobile ? 0.22 : 0.28);
+      const isSmallMobile = width < 400;
+      radius = Math.min(width, height) * (isSmallMobile ? 0.12 : (isMobile ? 0.16 : 0.28));
     };
 
     handleResize();
@@ -436,8 +437,13 @@ export default function NeuralNetworkChord() {
         ctx.rotate(cat.angle);
         
         const isMobile = width < 600;
+        const isSmallMobile = width < 400;
         ctx.fillStyle = isActive ? "#ffffff" : "rgba(226, 232, 240, 0.85)";
-        ctx.font = `bold ${isActive ? (isMobile ? "9px" : "11px") : (isMobile ? "7.5px" : "10px")} var(--font-mono), monospace`;
+        
+        const fontSizeActive = isSmallMobile ? "7px" : (isMobile ? "9px" : "11px");
+        const fontSizeInactive = isSmallMobile ? "6px" : (isMobile ? "7.5px" : "10px");
+        ctx.font = `bold ${isActive ? fontSizeActive : fontSizeInactive} var(--font-mono), monospace`;
+        
         ctx.textAlign = "left";
         ctx.textBaseline = "middle";
 
@@ -448,7 +454,8 @@ export default function NeuralNetworkChord() {
         }
         
         // Offset text slightly from circle
-        ctx.fillText(cat.name, isMobile ? 12 : 16, 0);
+        const textOffset = isSmallMobile ? 6 : (isMobile ? 12 : 16);
+        ctx.fillText(cat.name, textOffset, 0);
         ctx.restore();
       });
 
@@ -497,20 +504,25 @@ export default function NeuralNetworkChord() {
         let isLeftHemisphere = normAngle > Math.PI / 2 || normAngle < -Math.PI / 2;
 
         const isMobile = width < 600;
+        const isSmallMobile = width < 400;
+        const nodeOffset = isSmallMobile ? 5 : (isMobile ? 8 : 12);
+        
         if (isLeftHemisphere) {
           // Flip angle 180 deg to prevent text being upside down on the left
           rotationAngle = normAngle + Math.PI;
           ctx.rotate(rotationAngle);
           ctx.textAlign = "right";
-          ctx.fillText(node.name, isMobile ? -8 : -12, 0);
+          ctx.fillText(node.name, -nodeOffset, 0);
         } else {
           ctx.rotate(rotationAngle);
           ctx.textAlign = "left";
-          ctx.fillText(node.name, isMobile ? 8 : 12, 0);
+          ctx.fillText(node.name, nodeOffset, 0);
         }
 
         ctx.fillStyle = isActive || isParentActive ? "#ffffff" : "rgba(148, 163, 184, 0.75)";
-        ctx.font = `${isActive || isParentActive ? "600" : "400"} ${isMobile ? (isActive || isParentActive ? "8.5px" : "7.5px") : (isActive || isParentActive ? "10.5px" : "9.5px")} var(--font-sans), sans-serif`;
+        const nodeSizeActive = isSmallMobile ? "7px" : (isMobile ? "8.5px" : "10.5px");
+        const nodeSizeInactive = isSmallMobile ? "5.5px" : (isMobile ? "7.5px" : "9.5px");
+        ctx.font = `${isActive || isParentActive ? "600" : "400"} ${isActive || isParentActive ? nodeSizeActive : nodeSizeInactive} var(--font-sans), sans-serif`;
         ctx.textBaseline = "middle";
 
         ctx.restore();
