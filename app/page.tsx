@@ -739,6 +739,48 @@ export default function Home() {
 
           </section>
 
+          {/* Epic Call to Action to Neural Map */}
+          <div style={{ marginTop: "5rem", marginBottom: "2rem", textAlign: "center" }}>
+            <h3 style={{ fontSize: "1.8rem", fontWeight: 800, marginBottom: "1rem" }}>
+              Explore My Entire Ecosystem
+            </h3>
+            <p style={{ color: "var(--slate-400)", marginBottom: "2rem", maxWidth: "600px", margin: "0 auto 2.5rem auto", lineHeight: 1.6 }}>
+              Dive into the interactive <strong style={{color: "var(--slate-900)"}}>Master Neural Map</strong> to see the data-driven connections between all my projects, skills, and academic milestones in a stunning visual interface.
+            </p>
+            <Link 
+              href="/neural-graph"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "12px",
+                background: "linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%)",
+                color: "#ffffff",
+                padding: "18px 40px",
+                borderRadius: "50px",
+                fontSize: "1.15rem",
+                fontWeight: 700,
+                textDecoration: "none",
+                boxShadow: "0 10px 25px -5px rgba(79, 70, 229, 0.4), 0 0 20px rgba(124, 58, 237, 0.3)",
+                transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-4px) scale(1.02)";
+                e.currentTarget.style.boxShadow = "0 20px 35px -5px rgba(79, 70, 229, 0.5), 0 0 35px rgba(124, 58, 237, 0.6)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0) scale(1)";
+                e.currentTarget.style.boxShadow = "0 10px 25px -5px rgba(79, 70, 229, 0.4), 0 0 20px rgba(124, 58, 237, 0.3)";
+              }}
+            >
+              <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                <circle cx="12" cy="12" r="9" strokeDasharray="3 3" />
+                <circle cx="12" cy="12" r="3" fill="currentColor" strokeWidth="0" />
+                <path d="M12 3v6M12 15v6M3 12h6M15 12h9" />
+              </svg>
+              ENTER NEURAL MAP ↗
+            </Link>
+          </div>
+
         </main>
 
         {/* Footer */}
