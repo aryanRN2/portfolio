@@ -1375,29 +1375,40 @@ export default function MasterNeuralGraph() {
             style={{
               display: "inline-flex",
               alignItems: "center",
-              gap: "8px",
-              color: "rgba(255, 255, 255, 0.6)",
-              fontSize: "0.8rem",
+              justifyContent: "center",
+              gap: "6px",
+              color: "#a1a1aa",
+              fontSize: "0.85rem",
+              fontWeight: 500,
               textDecoration: "none",
-              fontFamily: "var(--font-mono)",
               background: "rgba(255, 255, 255, 0.03)",
-              border: "1px solid rgba(255, 255, 255, 0.08)",
-              padding: "6px 14px",
-              borderRadius: "20px",
-              transition: "all 0.2s ease",
+              backdropFilter: "blur(8px)",
+              border: "1px solid rgba(255, 255, 255, 0.05)",
+              padding: "8px 16px",
+              borderRadius: "12px",
+              transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+              boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+              width: "fit-content",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.color = "#ffffff";
-              e.currentTarget.style.borderColor = "rgba(79, 70, 229, 0.4)";
-              e.currentTarget.style.background = "rgba(79, 70, 229, 0.05)";
+              e.currentTarget.style.borderColor = "rgba(79, 70, 229, 0.5)";
+              e.currentTarget.style.background = "rgba(79, 70, 229, 0.1)";
+              e.currentTarget.style.boxShadow = "0 0 15px rgba(79, 70, 229, 0.3)";
+              e.currentTarget.style.transform = "translateY(-1px)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.color = "rgba(255, 255, 255, 0.6)";
-              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.08)";
+              e.currentTarget.style.color = "#a1a1aa";
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.05)";
               e.currentTarget.style.background = "rgba(255, 255, 255, 0.03)";
+              e.currentTarget.style.boxShadow = "0 4px 6px -1px rgba(0, 0, 0, 0.1)";
+              e.currentTarget.style.transform = "translateY(0)";
             }}
           >
-            ← Back
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+            Back
           </Link>
           <h1
             style={{
