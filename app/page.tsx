@@ -24,66 +24,95 @@ export default function Home() {
         <main style={{ flex: 1, padding: "3rem 0" }}>
           
           <section id="about" className="animate-fade-in-up" style={{ marginBottom: "4rem" }}>
-            <div className="glass-panel" style={{ padding: "40px", position: "relative", overflow: "hidden" }}>
-              {/* Decorative subtle glows */}
+            {/* macOS Terminal Style Hero Card */}
+            <div className="glass-panel" style={{ 
+              padding: "0", 
+              position: "relative", 
+              overflow: "hidden",
+              background: "#0f172a", // Dark terminal aesthetic
+              border: "1px solid rgba(255, 255, 255, 0.1)",
+              boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)",
+              borderRadius: "16px"
+            }}>
+              {/* Terminal Title Bar */}
               <div style={{
-                position: "absolute",
-                top: "-10%",
-                right: "-10%",
-                width: "250px",
-                height: "250px",
-                borderRadius: "50%",
-                background: "radial-gradient(circle, var(--primary-glow) 0%, transparent 70%)",
-                pointerEvents: "none"
-              }} />
-              
-              <div style={{ display: "flex", flexDirection: "column", gap: "20px", alignItems: "center", textAlign: "center" }}>
-                
-                {/* Meta Tag Badge */}
-                <div style={{ display: "inline-flex", alignSelf: "center", marginBottom: "1rem" }}>
-                  <div style={{
-                    position: "relative",
-                    background: "linear-gradient(90deg, rgba(79, 70, 229, 0.1), rgba(8, 145, 178, 0.1))",
-                    border: "1px solid rgba(79, 70, 229, 0.3)",
-                    color: "var(--primary)",
-                    padding: "8px 20px",
-                    borderRadius: "30px",
-                    fontSize: "0.85rem",
-                    fontWeight: 700,
-                    letterSpacing: "0.15em",
-                    fontFamily: "var(--font-mono)",
-                    boxShadow: "0 0 15px rgba(79, 70, 229, 0.15)"
-                  }}>
-                    <span style={{ display: "inline-block", width: "8px", height: "8px", borderRadius: "50%", background: "var(--primary)", marginRight: "8px", boxShadow: "0 0 8px var(--primary)" }}></span>
-                    ABOUT ME
-                  </div>
+                background: "#1e293b",
+                padding: "12px 16px",
+                display: "flex",
+                alignItems: "center",
+                borderBottom: "1px solid rgba(255, 255, 255, 0.05)"
+              }}>
+                <div style={{ display: "flex", gap: "8px" }}>
+                  <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#ff5f56", boxShadow: "0 0 4px rgba(255,95,86,0.3)" }}></div>
+                  <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#ffbd2e", boxShadow: "0 0 4px rgba(255,189,46,0.3)" }}></div>
+                  <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#27c93f", boxShadow: "0 0 4px rgba(39,201,63,0.3)" }}></div>
                 </div>
+                <div style={{ flex: 1, textAlign: "center", color: "var(--slate-400)", fontSize: "0.85rem", fontFamily: "var(--font-mono)", opacity: 0.8, marginRight: "48px" }}>
+                  aryan_maurya — bash — 80x24
+                </div>
+              </div>
 
-                {/* Name */}
-                <h1 style={{ 
-                  fontSize: "clamp(2.5rem, 6vw, 4.5rem)", 
-                  fontWeight: 900, 
-                  lineHeight: 1.1, 
-                  letterSpacing: "-0.03em",
-                  background: "linear-gradient(135deg, #0f172a 0%, #4f46e5 50%, #0891b2 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  filter: "drop-shadow(0 4px 12px rgba(79, 70, 229, 0.15))"
-                }}>
-                  Aryan Maurya
-                </h1>
+              {/* Terminal Content Box */}
+              <div style={{ padding: "clamp(2rem, 5vw, 4rem)", position: "relative" }}>
+                {/* Decorative subtle glows */}
+                <div style={{
+                  position: "absolute",
+                  top: "-10%",
+                  right: "-10%",
+                  width: "250px",
+                  height: "250px",
+                  borderRadius: "50%",
+                  background: "radial-gradient(circle, rgba(79, 70, 229, 0.3) 0%, transparent 70%)",
+                  pointerEvents: "none"
+                }} />
+                
+                <div style={{ display: "flex", flexDirection: "column", gap: "20px", alignItems: "center", textAlign: "center", position: "relative", zIndex: 1 }}>
+                  
+                  {/* Meta Tag Badge */}
+                  <div style={{ display: "inline-flex", alignSelf: "center", marginBottom: "1rem" }}>
+                    <div style={{
+                      position: "relative",
+                      background: "rgba(79, 70, 229, 0.15)",
+                      border: "1px solid rgba(79, 70, 229, 0.4)",
+                      color: "#a5b4fc",
+                      padding: "8px 20px",
+                      borderRadius: "30px",
+                      fontSize: "0.85rem",
+                      fontWeight: 700,
+                      letterSpacing: "0.15em",
+                      fontFamily: "var(--font-mono)",
+                      boxShadow: "0 0 15px rgba(79, 70, 229, 0.2)"
+                    }}>
+                      <span style={{ display: "inline-block", width: "8px", height: "8px", borderRadius: "50%", background: "#818cf8", marginRight: "8px", boxShadow: "0 0 8px #818cf8" }}></span>
+                      ABOUT ME
+                    </div>
+                  </div>
 
-                {/* Tagline focused heavily on ML and AI */}
-                <p style={{ 
-                  fontSize: "clamp(1.15rem, 2.5vw, 1.5rem)", 
-                  fontWeight: 400, 
-                  color: "var(--slate-400)", 
-                  lineHeight: 1.6, 
-                  maxWidth: "850px",
-                  marginTop: "0.5rem"
-                }}>
-                  Training intelligent deep neural architectures and building highly scalable, data-driven AI systems. Specializing in <strong style={{ color: "var(--primary)" }}>Deep Learning</strong>, <strong style={{ color: "var(--primary)" }}>Predictive Modeling</strong>, and <strong style={{ color: "var(--primary)" }}>High-Performance Machine Learning Pipelines</strong>.
-                </p>
+                  {/* Name */}
+                  <h1 style={{ 
+                    fontSize: "clamp(2.5rem, 6vw, 4.5rem)", 
+                    fontWeight: 900, 
+                    lineHeight: 1.1, 
+                    letterSpacing: "-0.03em",
+                    background: "linear-gradient(135deg, #ffffff 0%, #a5b4fc 50%, #22d3ee 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    filter: "drop-shadow(0 4px 12px rgba(165, 180, 252, 0.2))"
+                  }}>
+                    Aryan Maurya
+                  </h1>
+
+                  {/* Tagline focused heavily on ML and AI */}
+                  <p style={{ 
+                    fontSize: "clamp(1.15rem, 2.5vw, 1.5rem)", 
+                    fontWeight: 400, 
+                    color: "var(--slate-300)", 
+                    lineHeight: 1.6, 
+                    maxWidth: "850px",
+                    marginTop: "0.5rem"
+                  }}>
+                    Training intelligent deep neural architectures and building highly scalable, data-driven AI systems. Specializing in <strong style={{ color: "#a5b4fc" }}>Deep Learning</strong>, <strong style={{ color: "#a5b4fc" }}>Predictive Modeling</strong>, and <strong style={{ color: "#a5b4fc" }}>High-Performance Machine Learning Pipelines</strong>.
+                  </p>
 
                 {/* Epic Call to Action to Neural Map */}
                 <div style={{ marginTop: "2.5rem" }}>
@@ -121,6 +150,7 @@ export default function Home() {
                   </Link>
                 </div>
 
+                </div>
               </div>
             </div>
           </section>
