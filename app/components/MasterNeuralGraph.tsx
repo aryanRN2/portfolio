@@ -1240,7 +1240,7 @@ export default function MasterNeuralGraph() {
 
         // Check if connection is highlighted due to hover
         const isHighlighted = activeId
-          ? (activeId === "center" || conn.from === activeId || conn.to === activeId)
+          ? (conn.from === activeId || conn.to === activeId)
           : false;
 
         // Skip rendering active lines in this pass
@@ -1273,7 +1273,7 @@ export default function MasterNeuralGraph() {
         if (conn.type === "background") return;
 
         const isHighlighted = activeId
-          ? (activeId === "center" || conn.from === activeId || conn.to === activeId)
+          ? (conn.from === activeId || conn.to === activeId)
           : false;
 
         if (!isHighlighted) return;
