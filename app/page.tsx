@@ -9,268 +9,216 @@ type TabType = "education" | "projects" | "certificates" | "socials" | "neural";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<TabType>("projects");
-  const [typedText, setTypedText] = useState("");
-  
-  const fullTerminalText = "> root@aryan_maurya:~$ ./initialize_ai_engineer.sh\n> Loading modules: Deep Learning, Predictive Modeling...\n> Training intelligent deep neural architectures and building highly scalable, data-driven AI systems.\n> Status: High-Performance ML Pipelines [ONLINE]";
 
-  useEffect(() => {
-    let i = 0;
-    const interval = setInterval(() => {
-      setTypedText(fullTerminalText.substring(0, i));
-      i++;
-      if (i > fullTerminalText.length) {
-        clearInterval(interval);
-      }
-    }, 25);
-    return () => clearInterval(interval);
-  }, []);
+  const handleTabClick = (tab: TabType) => {
+    setActiveTab(tab);
+    const hubSection = document.getElementById("hub");
+    if (hubSection) {
+      hubSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const scrollToHub = () => {
+    const hubSection = document.getElementById("hub");
+    if (hubSection) {
+      hubSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <>
       {/* High-performance lightweight 3D Background */}
       <ThreeBackground />
 
-      {/* Main Container */}
-      <div className="container" style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
-        
-        {/* Navigation Removed */}
 
-        {/* Hero & About Section */}
-        <main style={{ flex: 1, padding: "3rem 0" }}>
-          
-          <section id="about" className="animate-fade-in-up" style={{ marginBottom: "4rem" }}>
-            {/* macOS Terminal Style Hero Card */}
-            <div className="glass-panel" style={{ 
-              padding: "0", 
-              position: "relative", 
-              overflow: "hidden",
-              background: "#0f172a", // Dark terminal aesthetic
-              border: "1px solid rgba(255, 255, 255, 0.1)",
-              boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)",
-              borderRadius: "16px"
-            }}>
-              {/* Terminal Title Bar */}
-              <div style={{
-                background: "#1e293b",
-                padding: "12px 16px",
-                display: "flex",
-                alignItems: "center",
-                borderBottom: "1px solid rgba(255, 255, 255, 0.05)"
-              }}>
-                <div style={{ display: "flex", gap: "8px" }}>
-                  <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#ff5f56", boxShadow: "0 0 4px rgba(255,95,86,0.3)" }}></div>
-                  <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#ffbd2e", boxShadow: "0 0 4px rgba(255,189,46,0.3)" }}></div>
-                  <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#27c93f", boxShadow: "0 0 4px rgba(39,201,63,0.3)" }}></div>
-                </div>
-                <div style={{ flex: 1, textAlign: "center", color: "var(--slate-400)", fontSize: "0.85rem", fontFamily: "var(--font-mono)", opacity: 0.8, marginRight: "48px" }}>
-                  aryan_maurya — bash — 80x24
-                </div>
-              </div>
+      {/* Hero Section */}
+      <section style={{
+        position: "relative",
+        height: "100vh",
+        width: "100vw",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        padding: "0 clamp(2rem, 8vw, 8rem)",
+        overflow: "hidden"
+      }}>
+        {/* Left-heavy layout */}
+        <div style={{ zIndex: 2, maxWidth: "900px", marginTop: "40px" }}>
+          <h1 style={{
+            fontSize: "clamp(2.5rem, 6vw, 4.8rem)",
+            fontWeight: 400,
+            lineHeight: 1.15,
+            letterSpacing: "-0.02em",
+            color: "#d4d4d8",
+            marginBottom: "2.5rem",
+            fontFamily: "var(--font-sans)",
+            opacity: 0.95
+          }}>
+            Hello i am Aryan Maurya
+          </h1>
 
-              {/* Terminal Content Box */}
-              <div style={{ padding: "clamp(2rem, 5vw, 4rem)", position: "relative" }}>
-                {/* Decorative subtle glows */}
-                <div style={{
-                  position: "absolute",
-                  top: "-10%",
-                  right: "-10%",
-                  width: "250px",
-                  height: "250px",
+          {/* Row of 5 buttons */}
+          <div style={{
+            display: "flex",
+            gap: "14px",
+            flexWrap: "wrap",
+            alignItems: "center"
+          }}>
+            <Link
+              href="/neural-graph"
+              className="btn-xai-green"
+            >
+              MASTER NEURAL ↗
+            </Link>
+
+            <button
+              onClick={() => handleTabClick("projects")}
+              className={activeTab === "projects" ? "btn-xai-white" : "btn-xai-outline"}
+            >
+              {activeTab === "projects" && (
+                <span style={{
+                  display: "inline-block",
+                  width: "7px",
+                  height: "7px",
                   borderRadius: "50%",
-                  background: "radial-gradient(circle, rgba(79, 70, 229, 0.3) 0%, transparent 70%)",
-                  pointerEvents: "none"
+                  background: "#10b981",
+                  boxShadow: "0 0 6px #10b981",
+                  marginRight: "8px"
                 }} />
-                
-                <div style={{ display: "flex", flexDirection: "column", gap: "20px", alignItems: "center", textAlign: "center", position: "relative", zIndex: 1 }}>
-                  
-                  {/* Meta Tag Badge */}
-                  <div style={{ display: "inline-flex", alignSelf: "center", marginBottom: "1rem" }}>
-                    <div style={{
-                      position: "relative",
-                      background: "rgba(79, 70, 229, 0.15)",
-                      border: "1px solid rgba(79, 70, 229, 0.4)",
-                      color: "#a5b4fc",
-                      padding: "8px 20px",
-                      borderRadius: "30px",
-                      fontSize: "0.85rem",
-                      fontWeight: 700,
-                      letterSpacing: "0.15em",
-                      fontFamily: "var(--font-mono)",
-                      boxShadow: "0 0 15px rgba(79, 70, 229, 0.2)"
-                    }}>
-                      <span style={{ display: "inline-block", width: "8px", height: "8px", borderRadius: "50%", background: "#818cf8", marginRight: "8px", boxShadow: "0 0 8px #818cf8" }}></span>
-                      ABOUT ME
-                    </div>
-                  </div>
+              )}
+              MY PROJECTS ↗
+            </button>
 
-                  {/* Name */}
-                  <h1 style={{ 
-                    fontSize: "clamp(2.5rem, 6vw, 4.5rem)", 
-                    fontWeight: 900, 
-                    lineHeight: 1.1, 
-                    letterSpacing: "-0.03em",
-                    background: "linear-gradient(135deg, #ffffff 0%, #a5b4fc 50%, #22d3ee 100%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    filter: "drop-shadow(0 4px 12px rgba(165, 180, 252, 0.2))"
-                  }}>
-                    Aryan Maurya
-                  </h1>
+            <button
+              onClick={() => handleTabClick("education")}
+              className={activeTab === "education" ? "btn-xai-white" : "btn-xai-outline"}
+            >
+              {activeTab === "education" && (
+                <span style={{
+                  display: "inline-block",
+                  width: "7px",
+                  height: "7px",
+                  borderRadius: "50%",
+                  background: "#10b981",
+                  boxShadow: "0 0 6px #10b981",
+                  marginRight: "8px"
+                }} />
+              )}
+              MY EDUCATION ↗
+            </button>
 
-                  {/* Animated Terminal Text */}
-                  <style>{`
-                    @keyframes blink {
-                      0%, 100% { opacity: 1; }
-                      50% { opacity: 0; }
-                    }
-                  `}</style>
-                  <div style={{ 
-                    fontSize: "clamp(0.95rem, 2vw, 1.15rem)", 
-                    fontWeight: 500, 
-                    color: "#cbd5e1", 
-                    lineHeight: 1.7, 
-                    maxWidth: "850px",
-                    marginTop: "1.5rem",
-                    fontFamily: "var(--font-mono)",
-                    textAlign: "left",
-                    background: "rgba(0, 0, 0, 0.4)",
-                    padding: "20px 24px",
-                    borderRadius: "8px",
-                    border: "1px solid rgba(255, 255, 255, 0.05)",
-                    boxShadow: "inset 0 0 10px rgba(0,0,0,0.5)",
-                    width: "100%",
-                    whiteSpace: "pre-wrap"
-                  }}>
-                    {typedText}
-                    <span style={{ 
-                      display: "inline-block", 
-                      width: "10px", 
-                      height: "1.2em", 
-                      background: "#22d3ee", 
-                      verticalAlign: "middle", 
-                      marginLeft: "6px",
-                      animation: "blink 1s step-end infinite",
-                      boxShadow: "0 0 8px #22d3ee"
-                    }}></span>
-                  </div>
+            <button
+              onClick={() => handleTabClick("certificates")}
+              className={activeTab === "certificates" ? "btn-xai-white" : "btn-xai-outline"}
+            >
+              {activeTab === "certificates" && (
+                <span style={{
+                  display: "inline-block",
+                  width: "7px",
+                  height: "7px",
+                  borderRadius: "50%",
+                  background: "#10b981",
+                  boxShadow: "0 0 6px #10b981",
+                  marginRight: "8px"
+                }} />
+              )}
+              MY CERTIFICATES ↗
+            </button>
 
-                {/* Epic Call to Action to Neural Map */}
-                <div style={{ marginTop: "2.5rem" }}>
-                  <Link 
-                    href="/neural-graph"
-                    style={{
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: "12px",
-                      background: "linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%)",
-                      color: "#ffffff",
-                      padding: "16px 36px",
-                      borderRadius: "50px",
-                      fontSize: "1.1rem",
-                      fontWeight: 700,
-                      textDecoration: "none",
-                      boxShadow: "0 10px 25px -5px rgba(79, 70, 229, 0.4), 0 0 20px rgba(124, 58, 237, 0.3)",
-                      transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = "translateY(-4px) scale(1.02)";
-                      e.currentTarget.style.boxShadow = "0 20px 35px -5px rgba(79, 70, 229, 0.5), 0 0 35px rgba(124, 58, 237, 0.6)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = "translateY(0) scale(1)";
-                      e.currentTarget.style.boxShadow = "0 10px 25px -5px rgba(79, 70, 229, 0.4), 0 0 20px rgba(124, 58, 237, 0.3)";
-                    }}
-                  >
-                    <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                      <circle cx="12" cy="12" r="9" strokeDasharray="3 3" />
-                      <circle cx="12" cy="12" r="3" fill="currentColor" strokeWidth="0" />
-                      <path d="M12 3v6M12 15v6M3 12h6M15 12h9" />
-                    </svg>
-                    ENTER NEURAL MAP ↗
-                  </Link>
-                </div>
+            <button
+              onClick={() => handleTabClick("socials")}
+              className={activeTab === "socials" ? "btn-xai-white" : "btn-xai-outline"}
+            >
+              {activeTab === "socials" && (
+                <span style={{
+                  display: "inline-block",
+                  width: "7px",
+                  height: "7px",
+                  borderRadius: "50%",
+                  background: "#10b981",
+                  boxShadow: "0 0 6px #10b981",
+                  marginRight: "8px"
+                }} />
+              )}
+              SOCIAL CONNECT ↗
+            </button>
+          </div>
+        </div>
 
-                </div>
-              </div>
-            </div>
-          </section>
+        {/* Bottom Elements */}
+        {/* Bottom-left: Down arrow indicator */}
+        <button
+          onClick={scrollToHub}
+          style={{
+            position: "absolute",
+            bottom: "2.5rem",
+            left: "clamp(2rem, 8vw, 8rem)",
+            background: "transparent",
+            border: "none",
+            color: "#ffffff",
+            cursor: "pointer",
+            padding: "8px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            opacity: 0.7,
+            transition: "opacity 0.3s ease, transform 0.3s ease",
+            zIndex: 2
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.opacity = "1";
+            e.currentTarget.style.transform = "translateY(4px)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.opacity = "0.7";
+            e.currentTarget.style.transform = "translateY(0)";
+          }}
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <polyline points="19 12 12 19 5 12"></polyline>
+          </svg>
+        </button>
 
-          {/* AI Engineer Neural Connection Map (Moved to Tabs) */}
+        {/* Bottom-right: NEURAL DOCUMENTATION link */}
+        <Link
+          href="/neural-graph"
+          className="btn-xai-outline"
+          style={{
+            position: "absolute",
+            bottom: "2.5rem",
+            right: "clamp(2rem, 8vw, 8rem)",
+            padding: "8px 20px",
+            fontSize: "0.75rem",
+            letterSpacing: "0.1em",
+            fontWeight: 600,
+            zIndex: 2
+          }}
+        >
+          NEURAL DOCUMENTATION ↗
+        </Link>
+      </section>
+
+      {/* Main Container */}
+      <div className="container" style={{ display: "flex", flexDirection: "column" }}>
+        
+        {/* Hero & About Section Removed */}
+        <main style={{ flex: 1, padding: "3rem 0" }}>
 
           {/* Interactive Hub Section */}
           <section id="hub" className="animate-fade-in-up delay-100" style={{ scrollMarginTop: "100px" }}>
             
-            <div style={{ textAlign: "center", marginBottom: "1.5rem" }}>
-              <h2 className="gradient-text" style={{ fontSize: "1.8rem", fontWeight: 700 }}>Interactive Directory</h2>
-              <p style={{ color: "var(--slate-400)", fontSize: "0.95rem", marginTop: "6px" }}>Select a section below to explore my credentials</p>
-            </div>
 
-            {/* Tab Selectors */}
-            <div className="tabs-container">
-              <button 
-                onClick={() => setActiveTab("projects")} 
-                className={`tab-btn ${activeTab === "projects" ? "active" : ""}`}
-              >
-                {/* SVG Folder/Project Icon */}
-                <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
-                </svg>
-                My Projects
-              </button>
-
-              <button 
-                onClick={() => setActiveTab("education")} 
-                className={`tab-btn ${activeTab === "education" ? "active" : ""}`}
-              >
-                {/* SVG Education Cap Icon */}
-                <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                </svg>
-                My Education
-              </button>
-
-              <button 
-                onClick={() => setActiveTab("certificates")} 
-                className={`tab-btn ${activeTab === "certificates" ? "active" : ""}`}
-              >
-                {/* SVG Award Icon */}
-                <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                </svg>
-                My Certificates
-              </button>
-
-              <button 
-                onClick={() => setActiveTab("socials")} 
-                className={`tab-btn ${activeTab === "socials" ? "active" : ""}`}
-              >
-                {/* SVG Connections Icon */}
-                <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-                </svg>
-                Social Connect
-              </button>
-
-
-
-              <Link 
-                href="/neural-graph" 
-                className="tab-btn"
-                style={{ textDecoration: "none" }}
-              >
-                {/* SVG Radial Circular Mapping Icon */}
-                <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2" strokeDasharray="3 3" />
-                  <circle cx="12" cy="12" r="3" fill="currentColor" />
-                  <path d="M12 3v6M12 15v6M3 12h6M15 12h9" stroke="currentColor" strokeWidth="2" />
-                </svg>
-                Master Neural Map ↗
-              </Link>
-            </div>
 
             {/* Dynamic Content Panel */}
             <div style={{ minHeight: "400px" }}>
+              
+              {/* TAB: NEURAL MAP */}
+              {activeTab === "neural" && (
+                <div style={{ animation: "fadeInUp 0.5s ease forwards" }}>
+                  <NeuralNetworkChord />
+                </div>
+              )}
               
 
 
@@ -756,7 +704,7 @@ export default function Home() {
                   </div>
 
                   {/* Elegant Separator */}
-                  <hr style={{ border: 0, height: "1px", background: "linear-gradient(90deg, transparent, rgba(0,0,0,0.06) 50%, transparent)", margin: "2rem 0" }} />
+                  <hr style={{ border: 0, height: "1px", background: "linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08) 50%, transparent)", margin: "2rem 0" }} />
 
                   {/* Direct Contact Channels Section */}
                   <div style={{ textAlign: "center", marginBottom: "1.5rem" }}>

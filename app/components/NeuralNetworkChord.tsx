@@ -606,68 +606,7 @@ export default function NeuralNetworkChord() {
         alignItems: "center",
       }}
     >
-      {/* Decorative Technical Badging */}
-      <div
-        style={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          borderBottom: "1px solid rgba(255, 255, 255, 0.06)",
-          paddingBottom: "16px",
-          marginBottom: "16px",
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          {/* Animated pulsing cyber light */}
-          <span
-            style={{
-              width: "8px",
-              height: "8px",
-              borderRadius: "50%",
-              background: "#4f46e5",
-              boxShadow: "0 0 10px #4f46e5",
-              display: "inline-block",
-              animation: "pulse 2s infinite ease-in-out",
-            }}
-          />
-          <span
-            style={{
-              color: "rgba(255, 255, 255, 0.9)",
-              fontSize: "0.85rem",
-              fontWeight: 600,
-              fontFamily: "var(--font-mono)",
-              letterSpacing: "0.08em",
-            }}
-          >
-            NEURAL ARCHITECTURE HUB
-          </span>
-        </div>
-        <span
-          style={{
-            fontSize: "0.75rem",
-            color: "rgba(99, 102, 241, 0.65)",
-            fontFamily: "var(--font-mono)",
-          }}
-        >
-          INTERACTIVE SYNAPSE MAP
-        </span>
-      </div>
 
-      {/* Description Text */}
-      <p
-        style={{
-          color: "rgba(148, 163, 184, 0.8)",
-          fontSize: "0.9rem",
-          lineHeight: 1.5,
-          textAlign: "center",
-          maxWidth: "700px",
-          marginBottom: "24px",
-        }}
-      >
-        Hover over the core AI domains on the right or individual tech nodes around the perimeter to trace 
-        connected synapses. Photons indicate active execution lines linking theoretical systems to projects & certs.
-      </p>
 
       {/* Interactive Bounding Canvas */}
       <div style={{ position: "relative", width: "100%", minHeight: "560px" }}>

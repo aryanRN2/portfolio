@@ -1,16 +1,16 @@
 :root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
-  --primary: #4f46e5; /* Indigo 600 */
-  --primary-glow: rgba(79, 70, 229, 0.08);
-  --secondary: #0891b2; /* Cyan 600 */
-  --secondary-glow: rgba(8, 145, 178, 0.08);
-  --slate-400: #475569; /* Slate 600 */
-  --slate-800: #e2e8f0; /* Slate 200 */
-  --slate-900: #cbd5e1; /* Slate 300 */
-  --border-color: rgba(0, 0, 0, 0.06);
-  --glass-bg: rgba(255, 255, 255, 0.65);
-  --glass-border: rgba(255, 255, 255, 0.7);
+  --background: #030303;
+  --foreground: #f8fafc;
+  --primary: #f59e0b; /* Golden Amber */
+  --primary-glow: rgba(245, 158, 11, 0.08);
+  --secondary: #ea580c; /* Warm Orange */
+  --secondary-glow: rgba(234, 88, 12, 0.08);
+  --slate-400: #94a3b8; /* Readable Slate in dark mode */
+  --slate-800: #cbd5e1;
+  --slate-900: #e2e8f0;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.02);
+  --glass-border: rgba(255, 255, 255, 0.06);
   --font-sans: var(--font-geist-sans), Inter, system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-geist-mono), Courier, monospace;
 }
@@ -38,13 +38,13 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #090909;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 4px;
-  border: 2px solid #f1f5f9;
+  border: 2px solid #090909;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -53,7 +53,7 @@ body {
 
 /* Custom CSS Gradients */
 .gradient-text {
-  background: linear-gradient(135deg, #0f172a 20%, #312e81 60%, #4f46e5 100%);
+  background: linear-gradient(135deg, #ffffff 30%, #f59e0b 70%, #ea580c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -110,8 +110,8 @@ body {
 }
 
 .tab-btn {
-  background: rgba(0, 0, 0, 0.02);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   color: var(--slate-400);
   padding: 10px 24px;
   border-radius: 30px;
@@ -126,17 +126,17 @@ body {
 }
 
 .tab-btn:hover {
-  background: rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.08);
   color: var(--foreground);
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(255, 255, 255, 0.15);
   transform: translateY(-2px);
 }
 
 .tab-btn.active {
-  background: linear-gradient(135deg, rgba(79, 70, 229, 0.08) 0%, rgba(8, 145, 178, 0.08) 100%);
-  border-color: rgba(79, 70, 229, 0.35);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(234, 88, 12, 0.08) 100%);
+  border-color: rgba(245, 158, 11, 0.35);
   color: var(--primary);
-  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.08);
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.08);
   font-weight: 600;
 }
 
@@ -411,7 +411,74 @@ footer {
   font-size: 0.85rem;
   font-family: var(--font-mono);
   text-align: center;
-  background: rgba(248, 250, 252, 0.8);
+  background: rgba(3, 3, 3, 0.8);
+}
+
+/* X.AI Buttons */
+.btn-xai-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  color: #000000;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid #ffffff;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.btn-xai-white:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.18);
+}
+
+.btn-xai-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.btn-xai-outline:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+.btn-xai-green {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #10b981;
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid #10b981;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.btn-xai-green:hover {
+  background: #059669;
+  border-color: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.35);
 }
 
 /* Media Queries */
@@ -441,3 +508,95 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+/* -------------------------------------------------------------
+   HIGH-PERFORMANCE BREATHING GLOW STYLES
+   ------------------------------------------------------------- */
+
+/* Absolute/fixed container to hold the glowing elements */
+.xai-glow-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -2;
+  pointer-events: none;
+  /* Force hardware acceleration on the parent container */
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+/* Massive Amber/Gold Glow */
+.xai-glow-amber {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 45vw;
+  height: 120vh;
+  border-radius: 50%;
+  /* Warm amber to transparent radial ellipse centered at the screen border */
+  background: radial-gradient(
+    ellipse at 100% 50%,
+    rgba(245, 158, 11, 0.95) 0%,
+    rgba(234, 88, 12, 0.6) 25%,
+    rgba(234, 88, 12, 0.2) 50%,
+    rgba(234, 88, 12, 0) 75%
+  );
+  /* Calibrated blur to soften the gradient without washing out the dark left side */
+  filter: blur(80px);
+  will-change: transform, opacity;
+  transform: translate3d(0, -50%, 0) scale(1);
+  transform-origin: right center;
+  animation: glowBreatheAmber 10s infinite ease-in-out;
+}
+
+/* Bright White/Cream Core Glow */
+.xai-glow-white {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 18vw;
+  height: 90vh;
+  border-radius: 50%;
+  /* White/warm-cream core to transparent radial ellipse centered at the screen border */
+  background: radial-gradient(
+    ellipse at 100% 50%,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 245, 225, 0.95) 20%,
+    rgba(245, 158, 11, 0.7) 45%,
+    rgba(234, 88, 12, 0) 70%
+  );
+  /* Moderate blur keeps the core intense and defined at the boundary edge */
+  filter: blur(30px);
+  will-change: transform, opacity;
+  transform: translate3d(0, -50%, 0) scale(1);
+  transform-origin: right center;
+  animation: glowBreatheWhite 8s infinite ease-in-out;
+}
+
+/* Hardware-accelerated animations using 3D transforms */
+@keyframes glowBreatheAmber {
+  0%, 100% {
+    transform: translate3d(0, -50%, 0) scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translate3d(0, -50%, 0) scale(1.05);
+    opacity: 1.0;
+  }
+}
+
+@keyframes glowBreatheWhite {
+  0%, 100% {
+    transform: translate3d(0, -50%, 0) scale(1);
+    opacity: 0.95;
+  }
+  50% {
+    transform: translate3d(0, -50%, 0) scale(1.03);
+    opacity: 1.0;
+  }
+}
+
+
