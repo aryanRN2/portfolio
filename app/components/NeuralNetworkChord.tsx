@@ -373,7 +373,7 @@ export default function NeuralNetworkChord() {
         }
       });
 
-      // Render active/highlighted curves next with shadowBlur (glow)
+      // Render active/highlighted curves next with highly efficient double-pass vector glow
       connections.forEach((conn) => {
         const isConnActive =
           currentHoveredCat.current === conn.catId ||
@@ -387,19 +387,24 @@ export default function NeuralNetworkChord() {
             const pNode = getNodePos(node.angle);
             const cp = getControlPoint(pCat, pNode);
 
-            // Neon glowing line
-            ctx.lineWidth = 2.0;
-            ctx.shadowBlur = 14;
-            ctx.shadowColor = conn.color;
+            // Aura glow path (thick, semi-transparent)
+            ctx.save();
+            ctx.globalAlpha = 0.22;
             ctx.strokeStyle = conn.color;
+            ctx.lineWidth = 6.0;
             ctx.beginPath();
             ctx.moveTo(pCat.x, pCat.y);
             ctx.quadraticCurveTo(cp.x, cp.y, pNode.x, pNode.y);
             ctx.stroke();
+            ctx.restore();
 
-            // Clear shadow settings immediately for performance
-            ctx.shadowBlur = 0;
-            ctx.lineWidth = 1;
+            // Crisp inner core path
+            ctx.strokeStyle = conn.color;
+            ctx.lineWidth = 1.6;
+            ctx.beginPath();
+            ctx.moveTo(pCat.x, pCat.y);
+            ctx.quadraticCurveTo(cp.x, cp.y, pNode.x, pNode.y);
+            ctx.stroke();
           }
         }
       });

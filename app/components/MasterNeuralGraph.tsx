@@ -1240,7 +1240,7 @@ export default function MasterNeuralGraph() {
 
         // Check if connection is highlighted due to hover
         const isHighlighted = activeId
-          ? (conn.from === activeId || conn.to === activeId)
+          ? (activeId === "center" || conn.from === activeId || conn.to === activeId)
           : false;
 
         // Skip rendering active lines in this pass
@@ -1273,7 +1273,7 @@ export default function MasterNeuralGraph() {
         if (conn.type === "background") return;
 
         const isHighlighted = activeId
-          ? (conn.from === activeId || conn.to === activeId)
+          ? (activeId === "center" || conn.from === activeId || conn.to === activeId)
           : false;
 
         if (!isHighlighted) return;
@@ -1284,20 +1284,26 @@ export default function MasterNeuralGraph() {
         const pTo = getNodePosition(nodeTo);
         const cp = getBezierControlPoint(pFrom, pTo);
 
-        // Neon glowing highlights
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = conn.color;
+        // Neon glowing highlights: Draw a thick semi-transparent 'aura' line first,
+        // then draw a crisp, thin core line on top. This is extremely efficient and
+        // uses hardware-accelerated vector drawing instead of expensive pixel-by-pixel shadowBlur.
+        ctx.save();
+        ctx.globalAlpha = 0.22;
         ctx.strokeStyle = conn.color;
-        ctx.lineWidth = conn.type === "core" ? 2.5 : 1.8;
-        
+        ctx.lineWidth = conn.type === "core" ? 7.0 : 5.0;
         ctx.beginPath();
         ctx.moveTo(pFrom.x, pFrom.y);
         ctx.quadraticCurveTo(cp.x, cp.y, pTo.x, pTo.y);
         ctx.stroke();
+        ctx.restore();
 
-        // Reset shadow/lineWidth immediately
-        ctx.shadowBlur = 0;
-        ctx.lineWidth = 1.0;
+        // Crisp inner core line
+        ctx.strokeStyle = conn.color;
+        ctx.lineWidth = conn.type === "core" ? 2.2 : 1.4;
+        ctx.beginPath();
+        ctx.moveTo(pFrom.x, pFrom.y);
+        ctx.quadraticCurveTo(cp.x, cp.y, pTo.x, pTo.y);
+        ctx.stroke();
       });
 
       // --- RENDER NODES ---
