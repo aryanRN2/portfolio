@@ -73,11 +73,12 @@ export default function MasterNeuralGraph() {
         id: "inst_bhu",
         name: "BHU Varanasi",
         type: "hub",
-        angle: 110 * Math.PI / 180, // Left Top-Hemisphere
+        angle: 110 * Math.PI / 180,
         radius: 140,
-        color: "hsl(195, 95%, 50%)", // Neon Cyan
+        color: "hsl(195, 95%, 50%)",
         glowColor: "rgba(6, 182, 212, 0.3)",
-        description: "Banaras Hindu University - Rigorous academic track focusing on abstract mathematical structures, advanced calculus, and linear algebra.",
+        description: "BS in Mathematics — Banaras Hindu University. Rigorous academic track covering Calculus, Linear Algebra, Real Analysis, Tensor & Vector Analysis, Graph Theory, Topology, Complex Analysis, Number Theory, and Space Dynamics. Research internship at MMV on Complex Conformal Mapping.",
+        url: "https://verify.bhu.ac.in/student/verify/eECba2CD-F10A-dF9F-7Aa0-C9a83f6b2CDc",
       },
       {
         id: "inst_iitm",
@@ -87,7 +88,8 @@ export default function MasterNeuralGraph() {
         radius: 140,
         color: "hsl(195, 95%, 50%)", // Neon Cyan
         glowColor: "rgba(6, 182, 212, 0.3)",
-        description: "Indian Institute of Technology Madras - Nationally ranked #1 engineering institute. Specialized training in data science and algorithms.",
+        description: "BS in Data Science — Indian Institute of Technology Madras (Nationally Ranked #1). Specialized training covering Machine Learning, Deep Learning, Data Science, Statistics, SQL & Databases, Python Programming, R Programming, and software engineering algorithms.",
+        url: "https://ds.study.iitm.ac.in/student/24F2001627",
       },
       {
         id: "inst_google",
@@ -199,19 +201,6 @@ export default function MasterNeuralGraph() {
 
     // 4. Left Hemisphere Data Nodes (radius 280px)
     const leftDataNodes: GraphNode[] = [
-      // BHU Varanasi Details — Degree
-      {
-        id: "edu_bhu",
-        name: "BS in Mathematics (BHU)",
-        type: "data",
-        hubId: "inst_bhu",
-        angle: 86 * Math.PI / 180,
-        radius: 280,
-        color: "hsl(195, 95%, 50%)",
-        glowColor: "rgba(6, 182, 212, 0.2)",
-        description: "Pursuing theoretical mathematics focusing on algebraic structures, mathematical analysis, and mathematical modeling.",
-        url: "https://verify.bhu.ac.in/student/verify/eECba2CD-F10A-dF9F-7Aa0-C9a83f6b2CDc",
-      },
       // BHU — Calculus
       {
         id: "bhu_calculus",
@@ -852,7 +841,9 @@ export default function MasterNeuralGraph() {
 
       // Education
       // Education — BHU degree + all subject nodes
-      edu_bhu: ["skill_python", "skill_stats"],
+      // BHU hub — BS in Mathematics — core math skills
+      inst_bhu: ["skill_python", "skill_stats", "skill_dl_theory", "skill_scikit"],
+      // BHU subject nodes
       bhu_calculus: ["skill_stats", "skill_dl_theory"],
       bhu_algebra: ["skill_stats", "skill_dl_theory"],
       bhu_linear_algebra: ["skill_stats", "skill_dl_theory", "skill_scikit"],
@@ -867,7 +858,8 @@ export default function MasterNeuralGraph() {
       bhu_topology: ["skill_stats", "skill_dl_theory"],
       bhu_space_dynamics: ["skill_stats", "skill_python"],
       bhu_number_theory: ["skill_stats", "skill_python"],
-      // IITM cross-links now go directly from the hub via primary connections (no duplicate leaf needed)
+      // IITM hub — BS in Data Science — all ML/AI/dev skills
+      inst_iitm: ["skill_python", "skill_sql", "skill_r_lang", "skill_stats", "skill_scikit", "skill_dl_theory", "skill_transformers", "skill_langchain", "skill_typescript", "skill_nextjs", "skill_git", "skill_html_css"],
 
       // Certificates
       cert_google_analytics: ["skill_stats", "skill_sql", "skill_r_lang"],
@@ -882,7 +874,7 @@ export default function MasterNeuralGraph() {
     };
 
     Object.entries(skillMapping).forEach(([dataNodeId, skills]) => {
-      const dataNode = leftDataNodes.find((n) => n.id === dataNodeId);
+      const dataNode = leftDataNodes.find((n) => n.id === dataNodeId) || hubs.find((n) => n.id === dataNodeId);
       if (dataNode) {
         skills.forEach((skillId) => {
           connections.push({
