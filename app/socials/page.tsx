@@ -172,7 +172,7 @@ export default function Page() {
           </section>
         </main>
         <footer style={{ padding: "2rem", textAlign: "center", zIndex: 10 }}>
-          <p>© {new Date().getFullYear()} ARYAN MAURYA. BUILT WITH NEXT.JS, THREE.JS & TS. LIGHTWEIGHT & FLUID.</p>
+          <p>© {new Date().getFullYear()} ARYAN MAURYA. BUILT WITH NEXT.JS, THREE.JS & TYPESCRIPT. LIGHTWEIGHT & FLUID.</p>
         </footer>
       </div>
     </>

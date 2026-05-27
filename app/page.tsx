@@ -23,8 +23,14 @@ export default function Home() {
     let i2 = 0;
     let i3 = 0;
     
+    let timer1: ReturnType<typeof setInterval> | undefined;
+    let timer2: ReturnType<typeof setInterval> | undefined;
+    let timer3: ReturnType<typeof setInterval> | undefined;
+    let timeout1: ReturnType<typeof setTimeout> | undefined;
+    let timeout2: ReturnType<typeof setTimeout> | undefined;
+    
     // Type line 1
-    const timer1 = setInterval(() => {
+    timer1 = setInterval(() => {
       if (i1 < text1.length) {
         setLine1(text1.substring(0, i1 + 1));
         i1++;
@@ -32,9 +38,9 @@ export default function Home() {
         clearInterval(timer1);
         setActiveCursor("line2");
         
-        // Type line 2 (starts after a small delay of 200ms)
-        setTimeout(() => {
-          const timer2 = setInterval(() => {
+        // Type line 2 (starts after a small delay of 100ms)
+        timeout1 = setTimeout(() => {
+          timer2 = setInterval(() => {
             if (i2 < text2.length) {
               setLine2(text2.substring(0, i2 + 1));
               i2++;
@@ -42,9 +48,9 @@ export default function Home() {
               clearInterval(timer2);
               setActiveCursor("terminal");
               
-              // Type terminal text (starts after a delay of 300ms)
-              setTimeout(() => {
-                const timer3 = setInterval(() => {
+              // Type terminal text (starts after a delay of 150ms)
+              timeout2 = setTimeout(() => {
+                timer3 = setInterval(() => {
                   if (i3 < text3.length) {
                     setTerminalText(text3.substring(0, i3 + 1));
                     i3++;
@@ -52,16 +58,20 @@ export default function Home() {
                     clearInterval(timer3);
                     setActiveCursor("none");
                   }
-                }, 40); // terminal types slightly faster
-              }, 300);
+                }, 15); // terminal types slightly faster
+              }, 150);
             }
-          }, 70);
-        }, 200);
+          }, 30);
+        }, 100);
       }
-    }, 70);
+    }, 30);
     
     return () => {
-      clearInterval(timer1);
+      if (timer1) clearInterval(timer1);
+      if (timer2) clearInterval(timer2);
+      if (timer3) clearInterval(timer3);
+      if (timeout1) clearTimeout(timeout1);
+      if (timeout2) clearTimeout(timeout2);
     };
   }, []);
 
@@ -136,7 +146,7 @@ export default function Home() {
                 <span style={{ color: "#38bdf8", flexShrink: 0, fontWeight: 600 }}>aryan@root:~$</span>
                 <span style={{ color: "#e2e8f0", wordBreak: "break-word" }}>
                   {terminalText}
-                  {activeCursor === "terminal" && <span className="terminal-cursor">█</span>}
+                  {(activeCursor === "terminal" || activeCursor === "none") && <span className="terminal-cursor">█</span>}
                 </span>
               </>
             )}
@@ -889,7 +899,7 @@ export default function Home() {
 
         {/* Footer */}
         <footer>
-          <p>© {new Date().getFullYear()} ARYAN MAURYA. BUILT WITH NEXT.JS, THREE.JS & TS. LIGHTWEIGHT & FLUID.</p>
+          <p>© {new Date().getFullYear()} ARYAN MAURYA. BUILT WITH NEXT.JS, THREE.JS & TYPESCRIPT. LIGHTWEIGHT & FLUID.</p>
         </footer>
 
       </div>

@@ -1628,9 +1628,9 @@ export default function MasterNeuralGraph() {
             textAlign: "right",
           }}
         >
-          <span>SYSTEM ACTIVE // 100% SECURE</span>
+          <span>PYTORCH CORE // SCIKIT-LEARN RUNTIME</span>
           <span style={{ color: "rgba(255,255,255,0.3)" }}>
-            NODES: {allNodesCount()} // LINKS: {allLinksCount()}
+            TENSORS INITIATED // {allNodesCount()} NODES & {allLinksCount()} LINKS
           </span>
         </div>
       </div>
@@ -1678,39 +1678,75 @@ export default function MasterNeuralGraph() {
             >
               {activeDetailNode.type} NODE
             </span>
-            {activeDetailNode.url && (
-              <a
-                href={activeDetailNode.url}
-                target="_blank"
-                rel="noopener noreferrer"
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              {activeDetailNode.url && (
+                <a
+                  href={activeDetailNode.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    color: "#ffffff",
+                    fontSize: "0.75rem",
+                    fontFamily: "var(--font-mono)",
+                    textDecoration: "none",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "4px",
+                    background: "rgba(255, 255, 255, 0.05)",
+                    padding: "4px 10px",
+                    borderRadius: "6px",
+                    border: "1px solid rgba(255, 255, 255, 0.1)",
+                    transition: "all 0.2s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = activeDetailNode.color;
+                    e.currentTarget.style.borderColor = activeDetailNode.color;
+                    e.currentTarget.style.boxShadow = `0 0 8px ${activeDetailNode.color}`;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "rgba(255, 255, 255, 0.05)";
+                    e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.1)";
+                    e.currentTarget.style.boxShadow = "none";
+                  }}
+                >
+                  OPEN NODE LINK ↗
+                </a>
+              )}
+              <button
+                onClick={() => {
+                  setSelectedNode(null);
+                  setHoveredNode(null);
+                  setActiveConnections([]);
+                }}
                 style={{
+                  background: "rgba(255, 255, 255, 0.05)",
+                  border: "1px solid rgba(255, 255, 255, 0.1)",
                   color: "#ffffff",
+                  cursor: "pointer",
+                  borderRadius: "6px",
+                  padding: "4px 10px",
                   fontSize: "0.75rem",
                   fontFamily: "var(--font-mono)",
-                  textDecoration: "none",
                   display: "inline-flex",
                   alignItems: "center",
-                  gap: "4px",
-                  background: "rgba(255, 255, 255, 0.05)",
-                  padding: "4px 10px",
-                  borderRadius: "6px",
-                  border: "1px solid rgba(255, 255, 255, 0.1)",
+                  justifyContent: "center",
                   transition: "all 0.2s ease",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = activeDetailNode.color;
-                  e.currentTarget.style.borderColor = activeDetailNode.color;
-                  e.currentTarget.style.boxShadow = `0 0 8px ${activeDetailNode.color}`;
+                  e.currentTarget.style.background = "rgba(239, 68, 68, 0.2)";
+                  e.currentTarget.style.borderColor = "rgb(239, 68, 68)";
+                  e.currentTarget.style.boxShadow = "0 0 8px rgba(239, 68, 68, 0.4)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.background = "rgba(255, 255, 255, 0.05)";
                   e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.1)";
                   e.currentTarget.style.boxShadow = "none";
                 }}
+                title="Close Details"
               >
-                OPEN NODE LINK ↗
-              </a>
-            )}
+                ✕ CLOSE
+              </button>
+            </div>
           </div>
 
           <h2
