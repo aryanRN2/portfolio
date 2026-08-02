@@ -19,57 +19,30 @@ export default function Page() {
               <div style={{ animation: "fadeInUp 0.5s ease forwards" }}>
                   <div className="cards-grid">
                     
-                    {/* Project 1: DeepLink-social-platform */}
+                    {/* Project 1: SciQB Platform */}
                     <div className="glass-panel project-card">
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "16px" }}>
-                        <h3 style={{ fontSize: "1.2rem", fontWeight: 600 }}>DeepLink Social Platform</h3>
+                        <h3 style={{ fontSize: "1.2rem", fontWeight: 600 }}>SciQB Platform</h3>
                         <span style={{ fontSize: "0.75rem", fontFamily: "var(--font-mono)", color: "var(--secondary)" }}>2026</span>
                       </div>
                       <p style={{ color: "var(--slate-400)", fontSize: "0.9rem", lineHeight: 1.5, flexGrow: 1, marginBottom: "20px" }}>
-                        A beautiful links aggregator and deep-linking system that creates optimized paths for profile sharing and platform-to-platform redirection, preserving developer card context.
+                        An advanced AI scientific intelligence platform powering quantum reasoning, automated paper synthesis, domain knowledge discovery, and computational research workflows.
                       </p>
                       <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginBottom: "20px" }}>
-                        <span className="tech-tag">JavaScript</span>
-                        <span className="tech-tag">HTML5</span>
-                        <span className="tech-tag">CSS3</span>
-                        <span className="tech-tag">Vercel</span>
-                      </div>
-                      <div style={{ display: "flex", gap: "16px", fontSize: "0.85rem", fontWeight: 500 }}>
-                        <a href="https://github.com/aryanRN2/DeepLink-social-platform" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "6px", color: "var(--primary)" }}>
-                          Codebase ↗
-                        </a>
-                        <a href="https://deeplink-friends.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "6px", color: "var(--secondary)" }}>
-                          Live Demo ↗
-                        </a>
-                      </div>
-                    </div>
-
-                    {/* Project 2: VRS Placement Portal Delta */}
-                    <div className="glass-panel project-card">
-                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "16px" }}>
-                        <h3 style={{ fontSize: "1.2rem", fontWeight: 600 }}>Placement Project Delta</h3>
-                        <span style={{ fontSize: "0.75rem", fontFamily: "var(--font-mono)", color: "var(--secondary)" }}>2026</span>
-                      </div>
-                      <p style={{ color: "var(--slate-400)", fontSize: "0.9rem", lineHeight: 1.5, flexGrow: 1, marginBottom: "20px" }}>
-                        A high-performance recruitment tracker and analytics dashboard featuring database integrity layers, active candidate registers, and transactional data exports.
-                      </p>
-                      <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginBottom: "20px" }}>
-                        <span className="tech-tag">HTML5</span>
-                        <span className="tech-tag">CSS3</span>
+                        <span className="tech-tag">Next.js 16</span>
+                        <span className="tech-tag">AI Agents</span>
+                        <span className="tech-tag">TypeScript</span>
                         <span className="tech-tag">Python</span>
-                        <span className="tech-tag">Vercel</span>
+                        <span className="tech-tag">GenAI</span>
                       </div>
                       <div style={{ display: "flex", gap: "16px", fontSize: "0.85rem", fontWeight: 500 }}>
-                        <a href="https://github.com/aryanRN2/placement-project" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "6px", color: "var(--primary)" }}>
-                          Codebase ↗
-                        </a>
-                        <a href="https://placement-project-delta.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "6px", color: "var(--secondary)" }}>
-                          Live Demo ↗
+                        <a href="https://sciqb.com" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "6px", color: "var(--secondary)" }}>
+                          Live Platform ↗
                         </a>
                       </div>
                     </div>
 
-                    {/* Project 3: VRS Digital Library */}
+                    {/* Project 2: VRS Digital Library */}
                     <div className="glass-panel project-card">
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "16px" }}>
                         <h3 style={{ fontSize: "1.2rem", fontWeight: 600 }}>VRS Digital Library</h3>
@@ -90,6 +63,29 @@ export default function Page() {
                         </a>
                         <a href="https://vrs-library.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "6px", color: "var(--secondary)" }}>
                           Live Demo ↗
+                        </a>
+                      </div>
+                    </div>
+
+                    {/* Project 3: CoAide — Kaggle AI IDE */}
+                    <div className="glass-panel project-card">
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "16px" }}>
+                        <h3 style={{ fontSize: "1.2rem", fontWeight: 600 }}>CoAide — Kaggle AI IDE</h3>
+                        <span style={{ fontSize: "0.75rem", fontFamily: "var(--font-mono)", color: "var(--secondary)" }}>2026</span>
+                      </div>
+                      <p style={{ color: "var(--slate-400)", fontSize: "0.9rem", lineHeight: 1.5, flexGrow: 1, marginBottom: "20px" }}>
+                        An intelligent agentic AI IDE and workspace co-pilot built during the Kaggle & Google 5-Day AI Agents Vibe Coding Challenge. Features automated notebook debugging, prompt execution, and AI-assisted code synthesis.
+                      </p>
+                      <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginBottom: "20px" }}>
+                        <span className="tech-tag">AI Agents</span>
+                        <span className="tech-tag">Kaggle API</span>
+                        <span className="tech-tag">TypeScript</span>
+                        <span className="tech-tag">Next.js 16</span>
+                        <span className="tech-tag">Vibe Coding</span>
+                      </div>
+                      <div style={{ display: "flex", gap: "16px", fontSize: "0.85rem", fontWeight: 500 }}>
+                        <a href="https://github.com/aryanRN2/kaggle-google" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "6px", color: "var(--primary)" }}>
+                          Codebase ↗
                         </a>
                       </div>
                     </div>

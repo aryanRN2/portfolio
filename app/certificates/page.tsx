@@ -20,6 +20,22 @@ export default function Page() {
                   <div className="cards-grid">
                     
 
+                    {/* 5-Day AI Agents: Intensive Vibe Coding Course (Kaggle & Google) */}
+                    <div className="glass-panel certificate-card">
+                      <div className="certificate-icon" style={{ background: "rgba(32, 190, 255, 0.1)" }}>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <path d="M19 2.25L11.5 12l7.5 9.75h-3.75L8.75 13.5v8.25H5.5V2.25h3.25v9L15.25 2.25H19z" fill="#20BEFF" />
+                        </svg>
+                      </div>
+                      <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+                        <h3 style={{ fontSize: "1.0rem", fontWeight: 600 }}>5-Day AI Agents: Intensive Vibe Coding Course</h3>
+                        <p style={{ color: "var(--slate-400)", fontSize: "0.8rem" }}>Kaggle & Google • 2026</p>
+                        <a href="/ai-agents-vibe-coding-cert.png" target="_blank" rel="noopener noreferrer" style={{ fontSize: "0.75rem", color: "var(--primary)", fontWeight: 500, textDecoration: "none", marginTop: "4px" }}>
+                          Verify Credential ↗
+                        </a>
+                      </div>
+                    </div>
+
 
                     {/* Google Data Analytics Certificate */}
                     <div className="glass-panel certificate-card">
@@ -192,22 +208,6 @@ export default function Page() {
                         <p style={{ color: "var(--slate-400)", fontSize: "0.8rem" }}>HackerRank Platform • 2026</p>
                         <a href="https://www.hackerrank.com/certificates/02861798b509" target="_blank" rel="noopener noreferrer" style={{ fontSize: "0.75rem", color: "var(--primary)", fontWeight: 500, textDecoration: "none", marginTop: "4px" }}>
                           Verify Credential ↗
-                        </a>
-                      </div>
-                    </div>
-
-                    {/* Kaggle Expert Badge */}
-                    <div className="glass-panel certificate-card">
-                      <div className="certificate-icon" style={{ background: "rgba(32, 190, 255, 0.1)" }}>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                          <path d="M19 2.25L11.5 12l7.5 9.75h-3.75L8.75 13.5v8.25H5.5V2.25h3.25v9L15.25 2.25H19z" fill="#20BEFF" />
-                        </svg>
-                      </div>
-                      <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
-                        <h3 style={{ fontSize: "1rem", fontWeight: 600 }}>Kaggle Notebooks Expert</h3>
-                        <p style={{ color: "var(--slate-400)", fontSize: "0.8rem" }}>Kaggle Platform • 2025</p>
-                        <a href="https://www.kaggle.com/aryanbhu" target="_blank" rel="noopener noreferrer" style={{ fontSize: "0.75rem", color: "var(--primary)", fontWeight: 500, textDecoration: "none", marginTop: "4px" }}>
-                          Verify Profile ↗
                         </a>
                       </div>
                     </div>

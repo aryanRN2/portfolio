@@ -470,18 +470,18 @@ export default function MasterNeuralGraph() {
         description: "Andrew Ng's verified specialization covering dimensionality reduction, clustering (K-Means, GMMs), and reinforcement learning systems.",
         url: "https://learn.deeplearning.ai/certificates/df53addd-a4b7-42dc-b46e-646d29b39f34?usp=sharing",
       },
-      // Kaggle Expert
+      // Kaggle & Google 5-Day AI Agents
       {
-        id: "cert_kaggle_expert",
-        name: "Kaggle Notebooks Expert",
+        id: "cert_ai_agents",
+        name: "5-Day AI Agents & Vibe Coding",
         type: "data",
         hubId: "inst_kaggle",
-        angle: 230 * Math.PI / 180,
+        angle: 236 * Math.PI / 180,
         radius: 280,
         color: "hsl(190, 95%, 50%)",
         glowColor: "rgba(6, 182, 212, 0.2)",
-        description: "Expert rank acknowledging advanced data visualization notebooks, model validation, and high-engagement exploratory data science runs.",
-        url: "https://www.kaggle.com/aryanbhu",
+        description: "Kaggle & Google certified intensive course on autonomous AI Agent systems, tool calling, multi-agent orchestration, and vibe coding paradigms.",
+        url: "/ai-agents-vibe-coding-cert.png",
       },
       // IIT Madras Certificates
       {
@@ -580,6 +580,30 @@ export default function MasterNeuralGraph() {
         glowColor: "rgba(244, 63, 94, 0.2)",
         description: "A serverless GenAI RAG system and interactive Next.js dashboard integrating Meta Llama 3 via Hugging Face inference and Three.js 3D WebGL simulations, powered by GCP pipelines.",
         url: "https://github.com/aryanRN2/workshop-helper",
+      },
+      {
+        id: "proj_sciqb",
+        name: "SciQB Platform",
+        type: "data",
+        hubId: "hub_projects",
+        angle: 238 * Math.PI / 180,
+        radius: 280,
+        color: "hsl(350, 95%, 55%)",
+        glowColor: "rgba(244, 63, 94, 0.2)",
+        description: "An advanced AI scientific intelligence platform powering quantum reasoning, automated paper synthesis, domain knowledge discovery, and computational research workflows.",
+        url: "https://sciqb.com",
+      },
+      {
+        id: "proj_coaide",
+        name: "CoAide — Kaggle AI IDE",
+        type: "data",
+        hubId: "hub_projects",
+        angle: 234 * Math.PI / 180,
+        radius: 280,
+        color: "hsl(350, 95%, 55%)",
+        glowColor: "rgba(244, 63, 94, 0.2)",
+        description: "An intelligent agentic AI IDE and workspace co-pilot built during the Kaggle & Google 5-Day AI Agents Vibe Coding Challenge.",
+        url: "https://github.com/aryanRN2/kaggle-google",
       },
     ];
 
@@ -951,6 +975,8 @@ export default function MasterNeuralGraph() {
         "skill_gcp",
         "skill_docker"
       ],
+      proj_sciqb: ["skill_agentic_agents", "skill_transformers", "skill_rag", "skill_nextjs", "skill_typescript", "skill_python"],
+      proj_coaide: ["skill_agentic_agents", "skill_transformers", "skill_prompt_eng", "skill_nextjs", "skill_typescript", "skill_python"],
 
       // Education
       // Education — BHU degree + all subject nodes
@@ -985,7 +1011,7 @@ export default function MasterNeuralGraph() {
       cert_python_basic: ["skill_python"],
       cert_sql_basic: ["skill_sql"],
       cert_css_basic: ["skill_html_css"],
-      cert_kaggle_expert: ["skill_python", "skill_scikit", "skill_dl_theory", "skill_stats"],
+      cert_ai_agents: ["skill_agentic_agents", "skill_langchain", "skill_prompt_eng", "skill_transformers", "skill_python"],
     };
 
     Object.entries(skillMapping).forEach(([dataNodeId, skills]) => {

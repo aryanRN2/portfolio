@@ -343,6 +343,14 @@ body {
   transform: translateY(-4px);
 }
 
+.social-youtube:hover {
+  color: #ff0000;
+  background: rgba(255, 0, 0, 0.05);
+  border-color: rgba(255, 0, 0, 0.3);
+  box-shadow: 0 8px 24px rgba(255, 0, 0, 0.08);
+  transform: translateY(-4px);
+}
+
 /* Layout Utilities */
 .container {
   max-width: 1100px;

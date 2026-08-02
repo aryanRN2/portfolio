@@ -329,57 +329,30 @@ export default function Home() {
                 <div style={{ animation: "fadeInUp 0.5s ease forwards" }}>
                   <div className="cards-grid">
                     
-                    {/* Project 1: DeepLink-social-platform */}
+                    {/* Project 1: SciQB Platform */}
                     <div className="glass-panel project-card">
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "16px" }}>
-                        <h3 style={{ fontSize: "1.2rem", fontWeight: 600 }}>DeepLink Social Platform</h3>
+                        <h3 style={{ fontSize: "1.2rem", fontWeight: 600 }}>SciQB Platform</h3>
                         <span style={{ fontSize: "0.75rem", fontFamily: "var(--font-mono)", color: "var(--secondary)" }}>2026</span>
                       </div>
                       <p style={{ color: "var(--slate-400)", fontSize: "0.9rem", lineHeight: 1.5, flexGrow: 1, marginBottom: "20px" }}>
-                        A beautiful links aggregator and deep-linking system that creates optimized paths for profile sharing and platform-to-platform redirection, preserving developer card context.
+                        An advanced AI scientific intelligence platform powering quantum reasoning, automated paper synthesis, domain knowledge discovery, and computational research workflows.
                       </p>
                       <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginBottom: "20px" }}>
-                        <span className="tech-tag">JavaScript</span>
-                        <span className="tech-tag">HTML5</span>
-                        <span className="tech-tag">CSS3</span>
-                        <span className="tech-tag">Vercel</span>
-                      </div>
-                      <div style={{ display: "flex", gap: "16px", fontSize: "0.85rem", fontWeight: 500 }}>
-                        <a href="https://github.com/aryanRN2/DeepLink-social-platform" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "6px", color: "var(--primary)" }}>
-                          Codebase ↗
-                        </a>
-                        <a href="https://deeplink-friends.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "6px", color: "var(--secondary)" }}>
-                          Live Demo ↗
-                        </a>
-                      </div>
-                    </div>
-
-                    {/* Project 2: VRS Placement Portal Delta */}
-                    <div className="glass-panel project-card">
-                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "16px" }}>
-                        <h3 style={{ fontSize: "1.2rem", fontWeight: 600 }}>Placement Project Delta</h3>
-                        <span style={{ fontSize: "0.75rem", fontFamily: "var(--font-mono)", color: "var(--secondary)" }}>2026</span>
-                      </div>
-                      <p style={{ color: "var(--slate-400)", fontSize: "0.9rem", lineHeight: 1.5, flexGrow: 1, marginBottom: "20px" }}>
-                        A high-performance recruitment tracker and analytics dashboard featuring database integrity layers, active candidate registers, and transactional data exports.
-                      </p>
-                      <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginBottom: "20px" }}>
-                        <span className="tech-tag">HTML5</span>
-                        <span className="tech-tag">CSS3</span>
+                        <span className="tech-tag">Next.js 16</span>
+                        <span className="tech-tag">AI Agents</span>
+                        <span className="tech-tag">TypeScript</span>
                         <span className="tech-tag">Python</span>
-                        <span className="tech-tag">Vercel</span>
+                        <span className="tech-tag">GenAI</span>
                       </div>
                       <div style={{ display: "flex", gap: "16px", fontSize: "0.85rem", fontWeight: 500 }}>
-                        <a href="https://github.com/aryanRN2/placement-project" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "6px", color: "var(--primary)" }}>
-                          Codebase ↗
-                        </a>
-                        <a href="https://placement-project-delta.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "6px", color: "var(--secondary)" }}>
-                          Live Demo ↗
+                        <a href="https://sciqb.com" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "6px", color: "var(--secondary)" }}>
+                          Live Platform ↗
                         </a>
                       </div>
                     </div>
 
-                    {/* Project 3: VRS Digital Library */}
+                    {/* Project 2: VRS Digital Library */}
                     <div className="glass-panel project-card">
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "16px" }}>
                         <h3 style={{ fontSize: "1.2rem", fontWeight: 600 }}>VRS Digital Library</h3>
@@ -400,6 +373,29 @@ export default function Home() {
                         </a>
                         <a href="https://vrs-library.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "6px", color: "var(--secondary)" }}>
                           Live Demo ↗
+                        </a>
+                      </div>
+                    </div>
+
+                    {/* Project 3: CoAide — Kaggle AI IDE */}
+                    <div className="glass-panel project-card">
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "16px" }}>
+                        <h3 style={{ fontSize: "1.2rem", fontWeight: 600 }}>CoAide — Kaggle AI IDE</h3>
+                        <span style={{ fontSize: "0.75rem", fontFamily: "var(--font-mono)", color: "var(--secondary)" }}>2026</span>
+                      </div>
+                      <p style={{ color: "var(--slate-400)", fontSize: "0.9rem", lineHeight: 1.5, flexGrow: 1, marginBottom: "20px" }}>
+                        An intelligent agentic AI IDE and workspace co-pilot built during the Kaggle & Google 5-Day AI Agents Vibe Coding Challenge. Features automated notebook debugging, prompt execution, and AI-assisted code synthesis.
+                      </p>
+                      <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginBottom: "20px" }}>
+                        <span className="tech-tag">AI Agents</span>
+                        <span className="tech-tag">Kaggle API</span>
+                        <span className="tech-tag">TypeScript</span>
+                        <span className="tech-tag">Next.js 16</span>
+                        <span className="tech-tag">Vibe Coding</span>
+                      </div>
+                      <div style={{ display: "flex", gap: "16px", fontSize: "0.85rem", fontWeight: 500 }}>
+                        <a href="https://github.com/aryanRN2/kaggle-google" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "6px", color: "var(--primary)" }}>
+                          Codebase ↗
                         </a>
                       </div>
                     </div>
@@ -630,6 +626,22 @@ export default function Home() {
                   <div className="cards-grid">
                     
 
+                    {/* 5-Day AI Agents: Intensive Vibe Coding Course (Kaggle & Google) */}
+                    <div className="glass-panel certificate-card">
+                      <div className="certificate-icon" style={{ background: "rgba(32, 190, 255, 0.1)" }}>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <path d="M19 2.25L11.5 12l7.5 9.75h-3.75L8.75 13.5v8.25H5.5V2.25h3.25v9L15.25 2.25H19z" fill="#20BEFF" />
+                        </svg>
+                      </div>
+                      <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+                        <h3 style={{ fontSize: "1.0rem", fontWeight: 600 }}>5-Day AI Agents: Intensive Vibe Coding Course</h3>
+                        <p style={{ color: "var(--slate-400)", fontSize: "0.8rem" }}>Kaggle & Google • 2026</p>
+                        <a href="/ai-agents-vibe-coding-cert.png" target="_blank" rel="noopener noreferrer" style={{ fontSize: "0.75rem", color: "var(--primary)", fontWeight: 500, textDecoration: "none", marginTop: "4px" }}>
+                          Verify Credential ↗
+                        </a>
+                      </div>
+                    </div>
+
 
                     {/* Google Data Analytics Certificate */}
                     <div className="glass-panel certificate-card">
@@ -806,22 +818,6 @@ export default function Home() {
                       </div>
                     </div>
 
-                    {/* Kaggle Expert Badge */}
-                    <div className="glass-panel certificate-card">
-                      <div className="certificate-icon" style={{ background: "rgba(32, 190, 255, 0.1)" }}>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                          <path d="M19 2.25L11.5 12l7.5 9.75h-3.75L8.75 13.5v8.25H5.5V2.25h3.25v9L15.25 2.25H19z" fill="#20BEFF" />
-                        </svg>
-                      </div>
-                      <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
-                        <h3 style={{ fontSize: "1rem", fontWeight: 600 }}>Kaggle Notebooks Expert</h3>
-                        <p style={{ color: "var(--slate-400)", fontSize: "0.8rem" }}>Kaggle Platform • 2025</p>
-                        <a href="https://www.kaggle.com/aryanbhu" target="_blank" rel="noopener noreferrer" style={{ fontSize: "0.75rem", color: "var(--primary)", fontWeight: 500, textDecoration: "none", marginTop: "4px" }}>
-                          Verify Profile ↗
-                        </a>
-                      </div>
-                    </div>
-
                   </div>
                 </div>
               )}
@@ -891,6 +887,17 @@ export default function Home() {
                       <div>
                         <div style={{ fontWeight: 600 }}>HackerRank</div>
                         <div style={{ fontSize: "0.75rem", opacity: 0.8, fontFamily: "var(--font-mono)" }}>@aryannsv</div>
+                      </div>
+                    </a>
+
+                    {/* YouTube (Brand Red) */}
+                    <a href="https://youtube.com/@gta6ai?si=hlGJJmf_w2oGCLCr" target="_blank" rel="noopener noreferrer" className="glass-panel social-btn social-youtube">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#FF0000" />
+                      </svg>
+                      <div>
+                        <div style={{ fontWeight: 600 }}>YouTube</div>
+                        <div style={{ fontSize: "0.75rem", opacity: 0.8, fontFamily: "var(--font-mono)" }}>@gta6ai</div>
                       </div>
                     </a>
 
