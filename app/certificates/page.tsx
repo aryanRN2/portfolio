@@ -98,6 +98,20 @@ export default function Page() {
                       </div>
                     </div>
 
+                    {/* IIT Madras Beyond Chatbots: Building AI Agents with Google ADK */}
+                    <div className="glass-panel certificate-card">
+                      <div className="certificate-icon" style={{ background: "rgba(180, 20, 20, 0.08)" }}>
+                        <img src="/iitm-logo.svg" width="24" height="24" alt="IIT Madras" />
+                      </div>
+                      <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+                        <h3 style={{ fontSize: "1.0rem", fontWeight: 600 }}>Beyond Chatbots: Building AI Agents with Google ADK</h3>
+                        <p style={{ color: "var(--slate-400)", fontSize: "0.8rem" }}>IIT Madras • 2026</p>
+                        <a href="/building-ai-agents-google-adk-cert.png" target="_blank" rel="noopener noreferrer" style={{ fontSize: "0.75rem", color: "var(--primary)", fontWeight: 500, textDecoration: "none", marginTop: "4px" }}>
+                          Verify Credential ↗
+                        </a>
+                      </div>
+                    </div>
+
                     {/* Real Cert 2: DeepLearning.AI Andrew Ng Course 3 */}
                     <div className="glass-panel certificate-card">
                       <div className="certificate-icon" style={{ background: "rgba(79, 70, 229, 0.08)" }}>

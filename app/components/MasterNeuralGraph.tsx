@@ -508,6 +508,18 @@ export default function MasterNeuralGraph() {
         description: "IIT Madras certification for the workshop 'Code, Commit, Collaborate: Hands-on with Git & GitHub'.",
         url: "https://drive.google.com/file/d/1b3oDK2vTlGj4uoe-RwbntxgdNJfQx9tH/view",
       },
+      {
+        id: "cert_iitm_adk",
+        name: "IITM Building AI Agents with Google ADK",
+        type: "data",
+        hubId: "inst_iitm",
+        angle: 151 * Math.PI / 180,
+        radius: 280,
+        color: "hsl(195, 90%, 55%)",
+        glowColor: "rgba(6, 182, 212, 0.2)",
+        description: "IIT Madras certification for workshop 'Beyond Chatbots: Building AI Agents with Google ADK'.",
+        url: "/building-ai-agents-google-adk-cert.png",
+      },
       // Projects
       {
         id: "proj_deeplink",
@@ -1004,6 +1016,7 @@ export default function MasterNeuralGraph() {
       cert_google_analytics: ["skill_stats", "skill_sql", "skill_r_lang"],
       cert_iitm_gcp: ["skill_gcp", "skill_docker"],
       cert_iitm_git: ["skill_git"],
+      cert_iitm_adk: ["skill_agentic_agents", "skill_prompt_eng", "skill_python"],
       cert_stanford_unsupervised: ["skill_python", "skill_dl_theory", "skill_scikit"],
       cert_langchain_llm: ["skill_python", "skill_langchain", "skill_transformers"],
       cert_swe_intern: ["skill_python", "skill_git", "skill_sql"],
