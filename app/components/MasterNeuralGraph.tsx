@@ -518,7 +518,7 @@ export default function MasterNeuralGraph() {
         color: "hsl(195, 90%, 55%)",
         glowColor: "rgba(6, 182, 212, 0.2)",
         description: "IIT Madras certification for workshop 'Beyond Chatbots: Building AI Agents with Google ADK'.",
-        url: "/building-ai-agents-google-adk-cert.png",
+        url: "https://ds.study.iitm.ac.in/student_dashboard/student_documents/download/5420011174756352/5416566290120704",
       },
       // Projects
       {

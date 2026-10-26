@@ -106,7 +106,7 @@ export default function Page() {
                       <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                         <h3 style={{ fontSize: "1.0rem", fontWeight: 600 }}>Beyond Chatbots: Building AI Agents with Google ADK</h3>
                         <p style={{ color: "var(--slate-400)", fontSize: "0.8rem" }}>IIT Madras • 2026</p>
-                        <a href="/building-ai-agents-google-adk-cert.png" target="_blank" rel="noopener noreferrer" style={{ fontSize: "0.75rem", color: "var(--primary)", fontWeight: 500, textDecoration: "none", marginTop: "4px" }}>
+                        <a href="https://ds.study.iitm.ac.in/student_dashboard/student_documents/download/5420011174756352/5416566290120704" target="_blank" rel="noopener noreferrer" style={{ fontSize: "0.75rem", color: "var(--primary)", fontWeight: 500, textDecoration: "none", marginTop: "4px" }}>
                           Verify Credential ↗
                         </a>
                       </div>
